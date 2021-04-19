@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SITES</title>
+    <link rel="icon" href="{% static 'images/books.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/sites.css' %}">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </head>
+  <body background="{% static 'images/bg.png' %}">
+    {% if user.is_authenticated %}
+    <div id="anc"><a href='{% url "logout" %}'> <img src="{% static 'images/logout.svg' %}" alt="logout" height="40"></a></div>
+    <div class="container">
+      <p style="padding-top:20px;" class="site">SITE</p> <br>
+          <div class="row scrollView">
+            <div class="col-11 m-3" onclick="window.open('https://www.hackerrank.com','_blank')">
+          <img src="https://img.icons8.com/windows/96/000000/hackerrank.png" align="left" height="50"/>Hackerrank
+          </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.codechef.com','_blank')">
+             <img src="{% static 'images/codechef.svg' %}" alt="broken_link" align="left" height="50"> CodeChef
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.tutorialspoint.com/index.htm','_blank')">
+              <img src="https://yt3.ggpht.com/a/AATXAJzvcPnvbl_ujFvCTNsTlxN93Y3VNzOPwgTpY6OF=s900-c-k-c0x00ffffff-no-rj" alt="broken_link" height="50" align="left"> Tutorialspoint</a>
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.geeksforgeeks.org/','_blank')">
+              <img src="{% static 'images/gfg.svg' %}" alt="broken_link" align="left" >
+                Geek For Geeks</a>
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.linkedin.com','_blank')">
+              <img src="{% static 'images/linkedin.svg' %}" alt="broken_link" height="50" align="left">LinkedIn
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.naukri.com/','_blank')">
+              <img src="{% static 'images/naukri.png' %}" alt="broken_link" align="left" height="50"> Naukri.com
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.udemy.com','_blank')">
+              <img src="{% static 'images/udemy.svg' %}" alt="broken_link" height="50" align="left" > Udemy
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.codeforlife.education/','_blank')">
+              <img src="https://www.codeforlife.education/static/portal/img/logo_c4l_hexa.png" alt="broken_link" height="50" align="left"> CodeForLife
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://academicearth.org/','_blank')">
+              <img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_ef94478f6d6832517c2fae3f25162b2e/academic-earth.png" alt="broken_link" height="50" align="left"> Academic Earth
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.khanacademy.org/','_blank')">
+              <img src="https://s.gravatar.com/avatar/5b175ab3090385b31cc5f04ef08f0fc3?size=496&default=retro" alt="broken_link" height="50" target="_blank" align="left">Khan Academy
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.bitdegree.org/','_blank')">
+              <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/bdg.svg" alt="broken_link" height="50" align="left">Bit Degree
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.codecademy.com/','_blank')">
+              <img src="https://iconape.com/wp-content/files/fi/343970/png/codecademy-logo.png" alt="broken_link" height="50" align="left">CodecAdemy
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://www.interviewbit.com/','_blank')">
+              <img src="https://i0.wp.com/blog.interviewbit.com/wp-content/uploads/2017/11/cropped-logo-transparent4.png?ssl=1" alt="broken_link" height="50" align="left">InterviewBit
+            </div>
+            <div class="col-11 m-3" onclick="window.open('https://leetcode.com/','_blank')">
+              <img src="https://assets.leetcode.com/static_assets/public/images/LeetCode_logo.png" alt="broken_link" height="50" align="left">LeetCode
+            </div>
+          </div>
+    </div>
+    {% else %}
+    <div class="container jumbotron cj">
+    <h1>You need to login to view this page, Redirecting to login</h1>
+    <meta http-equiv="refresh" content="2; URL={% url 'app:user_login' %}" />
+  </div>
+    {% endif %}
+  </body>
+</html>

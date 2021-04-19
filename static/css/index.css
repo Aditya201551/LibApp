@@ -1,0 +1,56 @@
+body{
+  background-size: cover;
+  /* font-family: 'Noto Sans', sans-serif; */
+}
+.textData{
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+.wc{
+  text-align: center;
+  font: normal normal 900 40px/40px 'Noto Sans';
+  letter-spacing: 6.16px;
+  color: #3D3636;
+  text-shadow: 0px 6px 6px #00000029;
+  opacity: 1;
+}
+.to{
+  text-align: center;
+  font: normal normal bold 25px/30px 'noto sans';
+  letter-spacing: 0px;
+  color: #3D3636;
+  text-shadow: 0px 6px 6px #00000029;
+  opacity: 1;
+}
+.ml{
+  text-align: center;
+  font: normal normal 900 45px/42px 'Noto Sans';
+  letter-spacing: 7.7px;
+  color: #3D3636;
+  text-shadow: 6px 6px 6px #00000029;
+  opacity: 1;
+}
+.para{
+  padding-bottom: 20px;
+  width: 300px;
+  height: 26px;
+  padding-top: 50px;
+  font: normal normal bold 12px/13px 'Noto Sans';
+  letter-spacing: 0px;
+  color: #3D3636;
+  opacity: 1;
+}
+button{
+  width: 300px;
+  height: 45px;
+  background: transparent linear-gradient(97deg, #57B2A3 0%, #1FC5A8 100%) 0% 0% no-repeat padding-box;
+  border: 1px;
+  border-radius: 10px;
+  opacity: 0.63;
+  text-align: center;
+  font: normal normal 900 28px/31px "noto sans";
+  letter-spacing: 6.16px;
+  color: #3D3636;
+  text-shadow: 0px 6px 6px #00000029;
+  opacity: 1;
+}

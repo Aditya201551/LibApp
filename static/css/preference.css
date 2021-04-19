@@ -1,0 +1,51 @@
+body{
+  padding-top: 10px;
+  background-size: cover;
+}
+.formbg{
+  padding-top: 100px;
+  background-color: #ffffff;
+  height: 350px;
+  width: 500px;
+  border-radius: 25px;
+  opacity: 0.86;
+}
+.fields{
+  text-align: center;
+  width: 349px;
+height: 45px;
+border: 1px solid #002BFF;
+border-radius: 10px;
+opacity: 1;
+}
+
+#nextBtn{
+  width: 349px;
+height: 45px;
+text-align: center;
+font: normal normal 900 22px/25px "noto sans";
+letter-spacing: 0.22px;
+color: #3D3636;
+opacity: 1;
+background: transparent linear-gradient(96deg, #5761B2 0%, #1FC5A8 100%) 0% 0% no-repeat padding-box;
+border-radius: 10px;
+border: 0px solid;
+}
+
+.ml{
+text-align: center;
+font: normal normal 900 45px/42px 'Noto Sans';
+letter-spacing: 7.7px;
+color: #3D3636;
+text-shadow: 6px 6px 6px #00000029;
+opacity: 1;
+}
+#anc{
+  float: right;
+  padding-right: 10px;
+}
+
+.cj{
+  margin:auto;
+  text-align:center;
+}

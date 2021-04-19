@@ -1,0 +1,43 @@
+body{
+  background-size: cover;
+}
+
+.site{
+  text-align: center;
+  font: normal normal 900 45px/42px 'Noto Sans';
+  letter-spacing: 7.7px;
+  color: #3D3636;
+  text-shadow: 6px 6px 6px #00000029;
+  opacity: 1;
+}
+
+#anc{
+  float: right;
+  padding: 10px;
+}
+
+.col-11{
+  padding-top: 10px;
+  text-align: center;
+  font: normal normal 1000 18px/50px 'Noto Sans';
+  letter-spacing: 0.18px;
+  color: #3D3636;
+  height: 70px;
+  width: auto;
+  background: white;
+  border: 1px solid #707070;
+  border-radius: 22px;
+  opacity: 1;
+}
+
+.scrollView{
+  overflow: scroll;
+  height: 590px;
+  width: auto;
+  overflow-x:hidden;
+}
+
+.cj{
+  margin:auto;
+  text-align: center;
+}

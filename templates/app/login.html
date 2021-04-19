@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+{% load socialaccount %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="icon" href="{% static 'images/books.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </head>
+  <body background="{% static 'images/bg.png' %}">
+    {% if user.is_authenticated %}
+    <div class="container jumbotron cj">
+    <h1>Welcome {{ user.username }} </h1>
+    <meta http-equiv="refresh" content="0.5; URL={% url 'app:preference' %}" />
+  </div>
+    {% else %}
+    <center>
+    <p class="logo"><img src="{% static 'images/books.png' %}" alt="Broken Link" height="150" width="150"></p>
+    <p class="ml">MY LIBRARY</p>
+    <div class="formbg">
+      <p id="login">LOGIN</p>
+      <form class="frm" action="{% url 'app:user_login' %}" method="post">
+        {% csrf_token %}
+        <input class="fields" type="text" name="username" placeholder="Username"> <br><br>
+        <input class="fields" type="password" name="password" placeholder="Password"><br><br>
+        <button id="loginbtn" type="submit" name="button">LOGIN</button><br>
+      </form>
+      OR <br>
+      <div onclick="location.href = '{% provider_login_url 'google' %}';" class='g-sign-in-button'>
+  <div class=content-wrapper>
+      <div class='logo-wrapper'>
+          <img src='{% static "images/google.png" %}'>
+      </div>
+      <span class='text-container'>
+    <span>Sign in with Google</span>
+  </span>
+  </div>
+</div><br>
+Don't have account? <br>
+<a id="register" href="{% url 'app:register' %}">Register</a>
+</div>
+  </center>
+  {% endif %}
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <title>DASHBOARD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{% static 'images/books.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  </head>
+  <body background="{% static 'images/bg.png' %}">
+    {% if user.is_authenticated %}
+    <div id="anc"><a href="{% url 'logout' %}"> <img src="{% static 'images/logout.svg' %}" alt="logout" height="40"></a></div>
+   <p class="db">DASHBOARD</p>
+
+<div class="container">
+<div class="whole">
+  
+    <div class="container">
+    <div class="row">
+    <!-- <div class="box-wrap"> -->
+      <div class="element col-lg-3 col-md-3 col-6">
+        <center> <a href="#"> <p> <img src="{% static 'images/book.svg' %}" alt="" height="100"></p> BOOKS </a></center>
+      </div>
+      <div class="element col-lg-3 col-md-3 col-6">
+      <center> <a href="{% url 'app:sites' %}"> <p><img src="{% static 'images/web.svg' %}" alt="broken link" height="100"></p>SITES</a></center>
+      </div>
+      <div class="element col-lg-3 col-md-3 col-12">
+      <center> <a href="#"> <p><img src="{% static 'images/document.svg' %}" alt="broken_link" height="100"></p>SYLLABUS</a></center>
+      </div>
+    </div>
+    </div>
+  <!-- </div> -->
+
+    <div class="container">
+    <div class="row">
+    <!-- <div class="box-wrap"> -->
+      <div class="element col-lg-3 col-md-3 col-6">
+      <center>  <a href="http://makautexam.net/" target="_blank"> <p><img src="{% static 'images/makaut.png' %}" alt="broken_link" height="100"></p>MAKAUT</a> </center>
+      </div>
+      <div class="element col-lg-3 col-md-3 col-6">
+      <center> <a href="#"> <p><img src="{% static 'images/news-paper.svg' %}" alt="broken_link" height="100"></p>NEWS</a></center>
+      </div>
+      <div class="element col-lg-3 col-md-3 col-12">
+      <center> <a href="#"> <p><img src="{% static 'images/quiz.svg' %}" alt="broken_link" height="100"></p>QUIZ</a></center>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+    {% else %}
+    <div class=" cj container jumbotron">
+    <h1>You need to login to view this page, Redirecting to login</h1>
+    <meta http-equiv="refresh" content="2; URL={% url 'app:user_login' %}" />
+  </div>
+    {% endif %}
+  </body>
+</html>

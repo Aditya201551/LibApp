@@ -1,0 +1,57 @@
+body{
+  background-size: cover;
+}
+.ml{
+text-align: center;
+font: normal normal 900 45px/42px 'Noto Sans';
+letter-spacing: 7.7px;
+color: #3D3636;
+text-shadow: 6px 6px 6px #00000029;
+opacity: 1;
+}
+#register{
+  padding-top: 30px;
+  padding-bottom: 49px;
+  height: 39px;
+  font: normal normal 900 35px/39px "noto sans";
+  letter-spacing: 3.5px;
+  color: #3D3636;
+  text-shadow: 0px 6px 6px #00000029;
+  opacity: 1;
+}
+.formbg{
+  background-color: #ffffff;
+  height: 470px;
+  width: 500px;
+  border-radius: 25px;
+  opacity: 0.86;
+}
+#regbtn{
+  width: 349px;
+height: 45px;
+text-align: center;
+font: normal normal 900 22px/25px "noto sans";
+letter-spacing: 0.22px;
+color: #3D3636;
+opacity: 1;
+background: transparent linear-gradient(96deg, #5761B2 0%, #1FC5A8 100%) 0% 0% no-repeat padding-box;
+border-radius: 10px;
+border: 0px solid;
+}
+
+.cj{
+  margin:auto;
+  text-align: center;
+}
+
+.formField{
+  text-align: center;
+  width: 349px;
+  height: 45px;
+  border: 1px solid #002BFF;
+  border-radius: 10px;
+  opacity: 1;
+}
+.login{
+  margin: -15px;
+}

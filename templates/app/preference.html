@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Preference page</title>
+    <link rel="icon" href="{% static 'images/books.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/preference.css' %}">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    function populate(s1, s2)
+    {
+      var s1=document.getElementById('course');
+      var s2=document.getElementById('sem');
+      s2.innerHTML="";
+      if(s1.value == 'BBA' || s1.value== "BCA" || s1.value== "MCA")
+      var optionArray=[ "1|1st", "2|2nd", "3|3rd", "4|4th", "5|5th", "6|6th"]
+      else if(s1.value=="MTECH_EE" || s1.value=="MTECT_ECE")
+      var optionArray=["1|1st", "2|2nd", "3|3rd", "4|4th"]
+      else if(s1.value=="pleaseSelect")
+      var optionArray=["pleaseSelect|Please select course first"]
+      else
+      var optionArray=["1|1st", "2|2nd", "3|3rd", "4|4th", "5|5th", "6|6th", "7|7th", "8|8th"]
+
+      for(options in optionArray)
+      {
+        var pair=optionArray[options].split("|");
+        var newOption=document.createElement("option")
+        newOption.value=pair[0]
+        newOption.innerHTML=pair[1]
+        s2.options.add(newOption)
+      }
+    }
+    </script>
+  </head>
+  <body background="{% static 'images/bg.png' %}">
+    {% if user.is_authenticated %}
+        <div id="anc"><a href="{% url 'logout' %}"> <img src="{% static 'images/logout.svg' %}" alt="logout" height="40"></a></div>
+    <center>
+      <p class="logo"><img src="{% static 'images/books.png' %}" alt="Broken Link" height="150" width="150"></p> <br>
+  <p class="ml">MY LIBRARY</p>
+    <div class="formbg">
+
+      <form class="frm" action="{% url 'app:dashboard' %}" method="POST">
+          {% csrf_token %}
+        <select class="fields btn btn-lg btn-link dropdown-toggle dropdown-toggle-split" id="course" onchange="populate('course', 'sem')">
+        <option selected value="pleaseSelect">Please Select</option>
+        <option value="BBA">BBA</option>
+        <option value="BCA">BCA</option>
+        <option value="CIVIL">CIVIL</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="EE">EE</option>
+        <option value="IT">IT</option>
+        <option value="ME">ME</option>
+        <option value="MCA">MCA</option>
+        <option value="MTECT_ECE">MTECH_ECE</option>
+        <option value="MTECH_EE">MTECH_EE</option>
+      </select>
+      <br><br>
+      <select class="fields fields btn btn-lg btn-link dropdown-toggle dropdown-toggle-split" id='sem'>
+        <option selected>Please select course first</option>
+      </select>
+      <br><br>
+      <input id="nextBtn" type="submit" name="" value="Next">
+    </form>
+  </div>
+         <br> <br>
+       </center>
+       {% else %}
+       <div class="container jumbotron cj">
+       <h1>You need to login to view this page, Redirecting to login</h1>
+       <meta http-equiv="refresh" content="2; URL={% url 'app:user_login' %}" />
+     </div>
+       {% endif %}
+  </body>
+</html>

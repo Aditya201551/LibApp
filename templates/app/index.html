@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WELCOME!</title>
+    <link rel="icon" href="{% static 'images/books.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  </head>
+  <body background="{% static 'images/bg.png' %}">
+      <div class="textData">
+      <p> <div class="wc">
+        WELCOME
+      </div>
+    <div class="to">
+      to
+    </div>
+  <div class="ml">
+    MY LIBRARY
+  </div> </p>
+      </div>
+      <div class="logo">
+        <center><img src='{% static "images/books.png" %}' alt="broken link" height="150" width="150"></center>
+      </div>
+    <center>  <p class="para">My Library can help students learn more through digital book and to excel in their studies</p></center>
+  <center>  <button onclick="location.href = '{% url 'app:user_login' %}';" type="button" name="button">GET STARTED</button></center>
+  </body>
+</html>
