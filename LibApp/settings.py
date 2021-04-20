@@ -159,4 +159,3 @@ SOCIALACCOUNT_PROVIDERS = {
 
 LOGIN_URl='app/user_login'
 CRISPY_TEMPLATE_PACK="bootstrap4"
-django_heroku.settings(locals())
